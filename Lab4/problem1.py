@@ -10,6 +10,7 @@ model = pm.Model()
 alpha = 6
 
 with model:
-    clienti = pm.Poisson('C', 20)
-
+    trafic = pm.Poisson('T', 1/3)
+    plata = pm.Normal("p", mu = 1, sigma = 10)
+    gatit = pm.Exponential('g', alpha)
     statieGatit = np.exp('SG', alpha)
